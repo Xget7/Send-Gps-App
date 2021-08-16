@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "425181606607",
+    "project_id": "ws-demo-3c95a",
+    "storage_bucket": "ws-demo-3c95a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425181606607:android:07fe4b86b2859d2afc7dba",
+        "android_client_info": {
+          "package_name": "com.example.sendgps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425181606607-qha4foaa2b0thmdkg685sbggblgnlvr3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sendgps",
+            "certificate_hash": "c1b9487113bc9f03c1021bb846922e449c509448"
+          }
+        },
+        {
+          "client_id": "425181606607-r2ioqjtockk8mr2g485in2gmnch2qhmg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGIq0q5xCDlQ3QNMchUo1p0J4uVlfqVxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425181606607-r2ioqjtockk8mr2g485in2gmnch2qhmg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

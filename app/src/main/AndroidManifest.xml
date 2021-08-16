@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~ *  Created Juan on 8/16/21, 10:08 AM
+  ~ *  Copyright Ⓒ 2021. All rights reserved Ⓒ 2021
+  ~ *  Last modified: 8/16/21, 10:07 AM
+  ~ *
+  ~ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+  ~ *  except in compliance with the License. You may obtain a copy of the License at
+  ~ *  http://www.apache.org/licenses/LICENS... Unless required by applicable law or agreed to in writing, software
+  ~ *   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ *   either express or implied. See the License for the specific language governing permissions and
+  ~ *   limitations under the License.
+  ~ *      ____       ______
+  ~ *    /  ∘" |     /\/\/\/\
+  ~ *    \____\ \_|\/\/\/\/\/|>
+  ~ *          \_____________|
+  ~ *           \_\_\    |_|_|
+  ~ */
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sendgps">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+
+
+    <application
+        android:name=".SendGpsApp"
+        android:icon="@mipmap/ic_launcher_foreground"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".presentation.timer.timerlogic.SettingsActivity"
+            android:theme="@style/Theme.SendGPS.NoActionBar">
+        </activity>
+        <activity android:name=".presentation.contactChooser.contactChooser" />
+        <activity android:name=".presentation.splashscreen.view.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".presentation.auth.register.view.RegisterActivity" />
+
+        <receiver
+            android:name=".presentation.timer.timerlogic.TimerNotificationActionReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="stop" />
+                <action android:name="start" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".presentation.timer.timerlogic.TimerExpiredReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.auth.passwordRecover.view.PasswordRecover"
+            android:label="@string/title_activity_recover"
+            android:theme="@style/Theme.SendGPS.NoActionBar" />
+        <activity
+            android:name=".presentation.timer.view.TimerActivity"
+            android:label="@string/title_activity_timer"
+            android:theme="@style/Theme.SendGPS.NoActionBar" />
+        <activity
+            android:name=".presentation.main.view.MainActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.SendGPS.NoActionBar" />
+        <activity android:name=".presentation.auth.login.view.LoginActivity" />
+        <service android:name=".domain.ForegroundServices.ForegroundOnlyLocationService"
+            android:foregroundServiceType="location"/>
+    </application>
+
+</manifest>
